@@ -36,6 +36,68 @@ esac
 exp1)-<en las expresiones podemos usar los mismos comidines que en los nombres de los ficheros ? * [...]>
 ultimaorde1;-> La última orden termina con doble punto y coma para indicar que termia el case
 
+Ejemplo Case:
+´´´
+#!/bin/bash
+
+#
+# PROGRAMA PARA DECIR LAS NOTAS EN FUNCION DE UN NUMERO
+#
+
+read -p "Introduzca la nota numerica:" nota
+
+case $nota in
+	10)
+		echo "Tienes un sobresaliente";;
+	9)
+		echo "Tienes un sobresaliente";;
+	8)
+		echo "Tienes un notable";;
+	7)
+                echo "Tienes un notable";;
+	6)
+                echo "Tienes un bien";;
+	5)
+                echo "Tienes un suspenso";;
+	4)
+                echo "Tienes un suspenso";;
+	3)
+                echo "Tienes un suspenso";;
+	2)
+                echo "Tienes un suspenso";;
+	1)
+                echo "Tienes un suspenso";;
+esac
+´´´
+
+
+´´´
+Mejorando el ejemplo anterior:
+#!/bin/bash
+
+#
+# PROGRAMA PARA DECIR LAS NOTAS EN FUNCION DE UN NUMERO
+#
+
+read -p "Introduzca la nota numerica:" nota
+
+case $nota in
+	10|9)
+		echo "Tienes un sobresaliente";;
+	[87])
+		echo "Tienes un notable";;
+	6)
+                echo "Tienes un bien";;
+	5)
+                echo "Tienes un suspenso";;
+	[43210])
+                echo "Tienes un suspenso";;
+	*)
+		echo "Nota incorrecta" ##no acepatará un digito fuera de 0 al 10
+ esac
+
+
+´´´
 
 
 
